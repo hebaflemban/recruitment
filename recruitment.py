@@ -1,7 +1,7 @@
 def main():
 
 	print("Welcome to the special recruitment program,\n please answer the following questions:")
-	skills = ["HTML", "Java", "C#", "C++", "DotNet", "Python", "Data Structure"]
+	skills = ["Python", "C++", "JavaScript", "Meeting", "Leeting", "Eating"]
 	cv ={}
 
 	cv['name'] = input("What's your name? ")
@@ -17,6 +17,11 @@ def main():
 	index1 = input("Choose a skill from above by entering its number: ")
 	index2 = input("Choose another skill from above by entering its number: ")
 
+	if (int(index1) > len(skills) )or (int(index2) > len(skills)):
+		print("Sorry %s, you got rejected, number entered is not valid" %(cv['name']))
+	else:
+		pass
+
 	cv['skills'].append( skills[int(index1)-1] )
 	cv['skills'].append( skills[int(index2)-1] )
 
@@ -28,6 +33,6 @@ def main():
 	else:
 		print("Sorry %s, you got rejected" %(cv['name']))
 
-
+	print(cv)
 if __name__ == '__main__':
 	main()
